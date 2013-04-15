@@ -6,7 +6,7 @@
   </ol>
   <!-- Carousel items -->
   <div class="carousel-inner">
-    <div class="item" ng-repeat="question in questions" ng-class="{active : $first, item : true}" >
+    <div class="item" ng-repeat="question in questions" ng-class="{active : $index==questionNo}">
       <div class="row-fluid">
         <div class="span12 question">
           <h3>{{($index + 1)}}.) {{question.question}}</h3>
@@ -16,7 +16,10 @@
           </label>
         </div>
       </div>
-      <div>Correct = {{question.selected == question.answer}}</div>
+      <div class="row"><div class="span12">Correct = {{question.selected == question.answer}}</div></div>
+      <div ng-show="$last">
+        <a ng-click="viewResults()" class="btn btn-primary">View Results</a>
+      </div>
     </div>
   </div>
   <!-- Carousel nav -->
