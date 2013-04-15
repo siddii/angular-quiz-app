@@ -1,0 +1,25 @@
+<div id="questions" class="carousel slide" data-interval="false" data-cycle="false">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="item" ng-repeat="question in questions" ng-class="{active : $first, item : true}" >
+      <div class="row-fluid">
+        <div class="span12 question">
+          <h3>{{($index + 1)}}.) {{question.question}}</h3>
+          <label class="radio" ng-repeat="choice in question.choice">
+            <input type="radio" name="{{'choice_' + $index}}" value="{{choice}}" ng-change="selectAnswer(question, choice)" ng-model="question.selected">
+            {{choice}}
+          </label>
+        </div>
+      </div>
+      <div>Correct = {{question.selected == question.answer}}</div>
+    </div>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#questions" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#questions" data-slide="next">&rsaquo;</a>
+</div>

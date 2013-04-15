@@ -1,0 +1,57 @@
+[
+  {
+    "question": "What is the capital city of New Mexico?",
+    "choice":
+            [
+              "Guadalajara",
+              "Albuquerque",
+              "Santa Fe",
+              "Taos"
+            ],
+    "answer": "Santa Fe"
+  },
+  {
+    "question": "Who is the author of beowulf?",
+    "choice":
+            [
+              "Mark Twain",
+              "Shakespeare",
+              "Abraham Lincoln",
+              "Newton"
+            ],
+    "answer": "Shakespeare"
+  },
+  {
+    "question": "Who directed the movie Forrest Gump?",
+    "choice":
+            [
+              "Martin Scorcese",
+              "Tom Hanks",
+              "Sam Mendes",
+              "Robert Zemeckis"
+            ],
+    "answer": "Robert Zemeckis"
+  },
+  {
+    "question": "When is going to be the next summer olympics?",
+    "choice":
+            [
+              2014,
+              2015,
+              2016,
+              2017
+            ],
+    "answer": 2016
+  },
+  {
+    "question": "Who plays the role of James Bond in the movie 'The Spy Who Loved Me'?",
+    "choice":
+            [
+              "Roger Moore",
+              "Sean Connery",
+              "Daniel Craig",
+              "Pierce Brosnan"
+            ],
+    "answer": "Roger Moore"
+  }
+]

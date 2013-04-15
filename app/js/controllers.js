@@ -2,11 +2,20 @@
 
 /* Controllers */
 
+function QuestionsController($scope, $http) {
+  $http.get('/app/services/questions.json').success(function (questions){
+    $scope.questions = questions;
+  });
 
-function MyCtrl1() {}
-MyCtrl1.$inject = [];
-
-
-function MyCtrl2() {
+  $scope.selectAnswer = function (question, choice) {
+    question.selected = choice;
+  } ;
 }
-MyCtrl2.$inject = [];
+
+
+function QuestionController() {
+
+}
+
+//MyCtrl1.$inject = [];
+//MyCtrl2.$inject = [];
