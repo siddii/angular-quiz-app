@@ -29,7 +29,7 @@ function ResultsController ($scope, $location, $resultsService) {
 
   $scope.closeModal = function() {
     $('#results').modal('hide');
-    $location.path('/questions');
+    $location.path('/questions/'+($scope.results.length - 1));
   }
 }
 ResultsController.$inject = ['$scope', '$location', 'resultsService'];
