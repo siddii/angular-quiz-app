@@ -1,9 +1,4 @@
 <div id="questions" class="carousel slide" data-interval="false">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
   <!-- Carousel items -->
   <div class="carousel-inner">
     <div class="item" ng-repeat="question in questions" ng-class="{active : $index==questionNo}">
@@ -16,8 +11,7 @@
           </label>
         </div>
       </div>
-      <div class="row"><div class="span12">Correct = {{question.selected == question.answer}}</div></div>
-      <div ng-show="$last">
+      <div class="text-center" ng-show="$last">
         <a ng-click="viewResults()" class="btn btn-primary">View Results</a>
       </div>
     </div>

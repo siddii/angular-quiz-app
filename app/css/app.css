@@ -1,10 +1,10 @@
 /* app css stylesheet */
 
-.center {
-    text-align: center;
+.question {
+    padding-left: 30px;
+    padding-top: 20px;
 }
 
-.question {
-    padding-top: 100px;
-    padding-left: 25px;
+.carousel-control {
+    top: 0;
 }
