@@ -1,7 +1,7 @@
 'use strict';
 
 
-// Declare app level module which depends on filters, and services
+// Declare app level module which depends on filters, services & directives
 angular.module('quiz-app', ['quiz-app.filters', 'quiz-app.services', 'quiz-app.directives']).
   config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/questions', {templateUrl: 'templates/questions.html', controller: QuestionsController});
