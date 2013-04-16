@@ -1,31 +1,62 @@
 'use strict';
 
 /* jasmine specs for controllers go here */
-
-describe('MyCtrl1', function(){
-  var myCtrl1;
+describe('Quiz App controllers', function() {
 
   beforeEach(function(){
-    myCtrl1 = new MyCtrl1();
+    this.addMatchers({
+      toEqualData: function(expected) {
+        return angular.equals(this.actual, expected);
+      }
+    });
   });
 
+  var mockQuestions = [
+    {
+      "question": "What is the capital city of New Mexico?",
+      "choice":
+        [
+          "Guadalajara",
+          "Albuquerque",
+          "Santa Fe",
+          "Taos"
+        ],
+      "answer": "Santa Fe"
+    },
+    {
+      "question": "Who is the author of beowulf?",
+      "choice":
+        [
+          "Mark Twain",
+          "Shakespeare",
+          "Abraham Lincoln",
+          "Newton"
+        ],
+      "answer": "Shakespeare"
+    }];
 
-  it('should ....', function() {
-    //spec body
+  beforeEach(module('quiz-app.services'));
+
+
+  describe('QuestionsController', function(){
+    var scope, ctrl, $httpBackend;
+
+    beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
+      $httpBackend = _$httpBackend_;
+      $httpBackend.expectGET('/app/services/questions.json').
+        respond(mockQuestions);
+
+      scope = $rootScope.$new();
+      ctrl = $controller(QuestionsController, {$scope: scope});
+    }));
+
+
+    it('should return 2 questions', function() {
+      $httpBackend.flush();
+
+      expect(scope.questions).toEqualData(
+        mockQuestions);
+    });
   });
-});
 
-
-describe('MyCtrl2', function(){
-  var myCtrl2;
-
-
-  beforeEach(function(){
-    myCtrl2 = new MyCtrl2();
-  });
-
-
-  it('should ....', function() {
-    //spec body
-  });
 });

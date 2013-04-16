@@ -22,7 +22,6 @@ function QuestionsController($scope, $http, $routeParams, $location, $resultsSer
 QuestionsController.$inject = ['$scope', '$http', '$routeParams', '$location', 'resultsService'];
 
 function ResultsController ($scope, $location, $resultsService) {
-  console.log('######## results = ', $resultsService.getResults());
   $scope.results = $resultsService.getResults();
   $('#results').modal();
 
