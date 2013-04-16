@@ -2,18 +2,22 @@
 
 /* jasmine specs for directives go here */
 
-//describe('directives', function() {
-//  beforeEach(module('myApp.directives'));
-//
-//  describe('app-version', function() {
-//    it('should print current version', function() {
-//      module(function($provide) {
-//        $provide.value('version', 'TEST_VER');
-//      });
-//      inject(function($compile, $rootScope) {
-//        var element = $compile('<span app-version></span>')($rootScope);
-//        expect(element.text()).toEqual('TEST_VER');
-//      });
-//    });
-//  });
-//});
+describe('directives', function() {
+  beforeEach(module('quiz-app.directives'));
+
+  var scope, $compile;
+  beforeEach(inject(function (_$rootScope_, _$compile_, $templateCache) {
+    scope = _$rootScope_;
+    $compile = _$compile_;
+    $templateCache.put('templates/timer.html', '.<h4 class="text-center">Time Taken: {{timeTaken | timerDisplay}}</h4>');
+  }));
+
+  describe('timer', function() {
+    it('should display timer', function() {
+      inject(function($compile, $rootScope) {
+        console.log('##### element', element.html());
+        expect(element.text()).toEqual('TEST_VER');
+      });
+    });
+  });
+});
