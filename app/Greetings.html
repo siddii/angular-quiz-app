@@ -11,6 +11,7 @@
     function GreetingController($scope) {
       $scope.greetings = 'Hello';
       $scope.user = {firstName:'John',lastName:'Doe'};
+      $scope.salutation = 'Mr.';
 
       $scope.reverseGreetings = function (){
         return $scope.greetings.split('').reverse().join('');
@@ -25,14 +26,18 @@
        <tr>
          <td>Greetings: </td><td><input type="text" ng-model="greetings"/></td>
        </tr>
-       <tr>
-         <td>First Name: </td><td><input type="text" ng-model="user.firstName"/></td>
+       <tr><td>Salutation</td>
+         <td>
+           <input type="radio" ng-model="salutation" value="Mr.">Mr.
+           <input type="radio" ng-model="salutation" value="Ms."> Ms.
+           <input type="radio" ng-model="salutation" value="Mrs.">Mrs.
+         </td>
        </tr>
        <tr>
-         <td>Last Name: </td><td><input type="text" ng-model="user.lastName"/></td>
+         <td>First Name: </td><td><input type="text" ng-model="user.firstName"/></td><td>Last Name: </td><td><input type="text" ng-model="user.lastName"/></td>
        </tr>
      </table>
-     <h1>{{greetings}} <i>{{user.firstName}}, {{user.lastName}}!</i></h1>
+     <h1>{{greetings}} <i>{{salutation}} {{user.firstName}}, {{user.lastName}}!</i></h1>
      <h1>Capitalised Name: <i>{{user.firstName + ' ' + user.lastName | uppercase}}</i></h1>
      <h1>Reversed Greetings = <i>{{reverseGreetings()}}</i></h1>
    </div>
