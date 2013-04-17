@@ -5,7 +5,7 @@
 function QuestionsController($scope, $http, $routeParams, $location, $resultsService) {
 
   $scope.questionNo = $routeParams && $routeParams.questionNo ? $routeParams.questionNo : 1;
-  $http.get('/app/services/questions.json').success(function (questions){
+  $http.get('/app/questions/questions.json').success(function (questions){
     $scope.questions = questions;
   });
 
