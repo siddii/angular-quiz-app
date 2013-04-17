@@ -43,7 +43,7 @@ describe('Quiz App controllers', function() {
 
     beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
       $httpBackend = _$httpBackend_;
-      $httpBackend.expectGET('/app/services/questions.json').
+      $httpBackend.expectGET('/app/questions/questions.json').
         respond(mockQuestions);
 
       scope = $rootScope.$new();
