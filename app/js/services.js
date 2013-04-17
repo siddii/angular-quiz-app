@@ -1,8 +1,6 @@
 'use strict';
 
 /* Services */
-
-// Demonstrate how to register services
 angular.module('quiz-app.services', [])
   .service('resultsService', function (){
      var _questions;

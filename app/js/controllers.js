@@ -4,7 +4,7 @@
 
 function QuestionsController($scope, $http, $routeParams, $location, $resultsService) {
 
-  $scope.questionNo = $routeParams && $routeParams.questionNo ? $routeParams.questionNo : 0;
+  $scope.questionNo = $routeParams && $routeParams.questionNo ? $routeParams.questionNo : 1;
   $http.get('/app/services/questions.json').success(function (questions){
     $scope.questions = questions;
   });
@@ -28,7 +28,7 @@ function ResultsController ($scope, $location, $resultsService) {
 
   $scope.closeModal = function() {
     $('#results').modal('hide');
-    $location.path('/questions/'+($scope.results.length - 1));
+    $location.path('/questions/'+($scope.results.length));
   }
 }
 ResultsController.$inject = ['$scope', '$location', 'resultsService'];

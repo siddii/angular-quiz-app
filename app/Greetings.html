@@ -40,6 +40,7 @@
      <h1>{{greetings}} <i>{{salutation}} {{user.firstName}}, {{user.lastName}}!</i></h1>
      <h1>Capitalised Name: <i>{{user.firstName + ' ' + user.lastName | uppercase}}</i></h1>
      <h1>Reversed Greetings = <i>{{reverseGreetings()}}</i></h1>
+     <input type="text" ng-bind="greetings"/>
    </div>
    <br/>
 </body>

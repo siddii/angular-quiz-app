@@ -1,7 +1,6 @@
 'use strict';
 
 /* Filters */
-
 angular.module('quiz-app.filters', [])
   .filter('timerDisplay', function(dateFilter) {
     var ONE_SECOND = 1000; //in milliseconds
