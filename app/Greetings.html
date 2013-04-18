@@ -1,25 +1,5 @@
 <!doctype html>
 <html>
-<head>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
-
-  <script type="text/javascript">
-    function reverse(str) {
-      return str.split('').reverse().join('');
-    }
-
-    function GreetingController($scope) {
-      $scope.greetings = 'Hello';
-      $scope.user = {firstName:'John',lastName:'Doe'};
-      $scope.salutation = 'Mr.';
-
-      $scope.reverseGreetings = function (){
-        return $scope.greetings.split('').reverse().join('');
-      };
-    }
-
-  </script>
-</head>
 <body ng-app>
    <div ng-controller="GreetingController" style="border: 1px solid;">
      <table>
@@ -40,8 +20,26 @@
      <h1>{{greetings}} <i>{{salutation}} {{user.firstName}}, {{user.lastName}}!</i></h1>
      <h1>Capitalised Name: <i>{{user.firstName + ' ' + user.lastName | uppercase}}</i></h1>
      <h1>Reversed Greetings = <i>{{reverseGreetings()}}</i></h1>
-     <input type="text" ng-bind="greetings"/>
    </div>
-   <br/>
+
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+
+   <script type="text/javascript">
+     function reverse(str) {
+       return str.split('').reverse().join('');
+     }
+
+     function GreetingController($scope) {
+       $scope.greetings = 'Hello';
+       $scope.user = {firstName:'John',lastName:'Doe'};
+       $scope.salutation = 'Mr.';
+
+       $scope.reverseGreetings = function (){
+         return $scope.greetings.split('').reverse().join('');
+       };
+     }
+
+   </script>
+
 </body>
 </html>
