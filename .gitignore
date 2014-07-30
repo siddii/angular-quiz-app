@@ -7,3 +7,5 @@ build.xml
 .settings
 .idea/*
 *.iml
+*.log
+node_modules
