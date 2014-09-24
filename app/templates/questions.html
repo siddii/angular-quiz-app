@@ -2,7 +2,7 @@
   <!-- Carousel items -->
   <div class="carousel-inner">
     <div class="item" ng-repeat="question in questions" ng-class="{active : $index==(questionNo-1)}">
-      <div class="row-fluid">
+      <div class="row">
         <div class="span12 question">
           <h3>{{($index + 1)}}.) {{question.question}}</h3>
           <label class="radio" ng-repeat="choice in question.choice">
